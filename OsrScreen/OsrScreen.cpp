@@ -354,6 +354,30 @@ void Screen::clear_face(){
   RGBmatrixPanel::fillRect(0,2,31,15,RGBmatrixPanel::Color444(BLACK));
 }
     
+void Screen::smile_face(){
+  //FACE
+  //EYES
+  RGBmatrixPanel::drawPixel(5,5,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(5,4,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,5,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,4,RGBmatrixPanel::Color444(0,0,0));
+
+  //hairtie
+
+  RGBmatrixPanel::drawPixel(4,1,RGBmatrixPanel::Color444(10,0,0));
+  RGBmatrixPanel::drawPixel(3,2,RGBmatrixPanel::Color444(10,0,0));
+
+  //smile
+  RGBmatrixPanel::drawPixel(9,10,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,11,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(7,12,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(6,12,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(5,11,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(4,10,RGBmatrixPanel::Color444(0,0,0));
+}
+
+
+
 void Screen::update_screen(int message[]){
   if ((preamble_check(message) && chksum_check(message)) || TEST_MODE){
     connected_status(message[CONNECTED_POS]);
