@@ -377,6 +377,31 @@ void Screen::smile_face(){
 }
 
 
+void Screen::strange_face(){
+  //FACE
+  //EYES
+  RGBmatrixPanel::drawPixel(5,5,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(5,4,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(5,3,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(9,5,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(9,4,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(9,3,RGBmatrixPanel::Color444(0,0,0));
+
+  // mouth ogf naseous or strange
+
+  RGBmatrixPanel::drawPixel(3,10,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(4,11,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(5,10,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(6,11,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(7,10,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,11,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(9,10,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(10,11,RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::cdrawPixel(11,10, RGBmatrixPanel::Color444(0,0,0));
+}
+
+
+
 
 void Screen::update_screen(int message[]){
   if ((preamble_check(message) && chksum_check(message)) || TEST_MODE){
