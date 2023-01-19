@@ -400,8 +400,26 @@ void Screen::strange_face(){
   RGBmatrixPanel::cdrawPixel(11,10, RGBmatrixPanel::Color444(0,0,0));
 }
 
+void Screen::kiss_face(){
+  //FACE
+  //EYES
+  RGBmatrixPanel::drawPixel(4,5,"RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(4,4,"RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,5,"RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,4,"RGBmatrixPanel::Color444(0,0,0));
 
+  //hairtie
 
+  RGBmatrixPanel::drawPixel(4,1, RGBmatrixPanel::Color444(10,0,0));
+  drawPixel(3,2, RGBmatrixPanel::Color444(10,0,0));
+
+ //kiss
+  RGBmatrixPanel::drawPixel(7,10,"RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,11,"RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(9,12,"RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(8,13,"RGBmatrixPanel::Color444(0,0,0));
+  RGBmatrixPanel::drawPixel(7,14,"RGBmatrixPanel::Color444(0,0,0));
+}
 
 void Screen::update_screen(int message[]){
   if ((preamble_check(message) && chksum_check(message)) || TEST_MODE){
