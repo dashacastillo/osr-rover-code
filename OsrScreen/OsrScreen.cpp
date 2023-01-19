@@ -353,7 +353,95 @@ void Screen::sleepy_face(){
 void Screen::clear_face(){
   RGBmatrixPanel::fillRect(0,2,31,15,RGBmatrixPanel::Color444(BLACK));
 }
-    
+
+void Screen::draw_eyebrows(){
+    RGBmatrixPanel::drawLine(0,0,5,5,RGBmatrixPanel::Color444(15,0,0));  // > eyebrows
+    RGBmatrixPanel::drawLine(5,5,0,10,RGBmatrixPanel::Color444(15,0,0));
+}
+void Screen::draw_eyes(){
+    RGBmatrixPanel::drawLine(6,2,8,2,RGBmatrixPanel::Color444(15,0,0));  // : eyes
+    RGBmatrixPanel::drawLine(6,8,8,8,RGBmatrixPanel::Color444(15,0,0));
+}
+
+void Screen::draw_crying_eyes(){
+    RGBmatrixPanel::drawLine(5,0,5,4,RGBmatrixPanel::Color444(15,0,0));  // TT
+    RGBmatrixPanel::drawLine(5,7,5,11,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(5,1,11,1,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(5,9,11,9,RGBmatrixPanel::Color444(15,0,0));
+}
+
+// Mouths
+
+void Screen::draw_happy_mouth(){
+    RGBmatrixPanel::drawLine(10,0,10,10,RGBmatrixPanel::Color444(15,0,0)); // D
+    RGBmatrixPanel::drawLine(10,0,13,0,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(10,10,13,10,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(13,0,16,3,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(13,10,16,7,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(16,3,16,8,RGBmatrixPanel::Color444(15,0,0));
+}
+
+void Screen::draw_cat_mouth(){
+    RGBmatrixPanel::drawLine(10,0,14,0,RGBmatrixPanel::Color444(15,0,0));   // 3
+    RGBmatrixPanel::drawLine(10,10,14,10,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(14,1,14,5,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(14,6,14,10,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(11,5,14,5,RGBmatrixPanel::Color444(15,0,0));
+}
+void Screen::draw_frown_mouth(){
+    RGBmatrixPanel::drawLine(10,1,10,10,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(11,0,15,0,RGBmatrixPanel::Color444(15,0,0));    // ( 
+    RGBmatrixPanel::drawLine(11,10,15,10,RGBmatrixPanel::Color444(15,0,0));
+}
+void Screen::draw_neutral_mouth(){
+    RGBmatrixPanel::drawLine(10,0,10,10,RGBmatrixPanel::Color444(15,0,0)); // |
+}
+void Screen::draw_glad_mouth(){
+    RGBmatrixPanel::drawLine(15,1,15,10,RGBmatrixPanel::Color444(15,0,0));
+    RGBmatrixPanel::drawLine(11,0,15,0,RGBmatrixPanel::Color444(15,0,0));    // )
+    RGBmatrixPanel::drawLine(11,10,15,10,RGBmatrixPanel::Color444(15,0,0));
+}
+
+void Screen::face_happy(){   // :D
+    draw_eyes();
+    draw_happy_mouth();
+}
+void Screen::face_mild_happy(){   // :)
+    draw_eyes();
+    draw_glad_mouth();
+}
+void Screen::face_sad(){     // :(
+    draw_eyes();
+    draw_frown_mouth();
+}
+void Screen::face_neutral(){  // :|
+    draw_eyes();
+    draw_neutral_mouth;
+}
+void Screen::face_angry(){  // >:(
+    draw_eyebrows();
+    draw_eyes();
+    draw_frown_mouth();
+}
+void Screen::face_crying(){  // TT
+    draw_crying_eyes();
+}
+void Screen::face_evil(){   // >:)
+    draw_eyebrows();
+    draw_eyes();
+    draw_happy_mouth();
+}
+void Screen::face_cat(){   // :3
+    draw_eyes();
+    draw_cat_mouth();
+}
+void Screen::face_dasha(){   // >:3
+    draw_eyebrows();
+    draw_eyes();
+    draw_cat_mouth();
+}
+
+
 void Screen::update_screen(int message[]){
   if ((preamble_check(message) && chksum_check(message)) || TEST_MODE){
     connected_status(message[CONNECTED_POS]);
@@ -370,3 +458,4 @@ void Screen::update_screen(int message[]){
     //happy_face();
   }
 }
+
