@@ -353,7 +353,61 @@ void Screen::sleepy_face(){
 void Screen::clear_face(){
   RGBmatrixPanel::fillRect(0,2,31,15,RGBmatrixPanel::Color444(BLACK));
 }
-    
+
+void Screen::happy_face_valton () {
+
+//olho esquerdo
+
+RGBmatrixPanel::drawPixel(8,5,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(8,4,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(8,3,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(8,2,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(7,5,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(7,4,RGBmatrixPanel::Color444(BLUE));
+RGBmatrixPanel::drawPixel(7,3,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(7,2,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(6,5,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(6,4,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(6,3,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(6,2,RGBmatrixPanel::Color444(BLACK));
+
+//olho direito
+
+RGBmatrixPanel::drawPixel(16,5,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(16,4,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(16,3,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(16,2,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(15,5,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(15,4,RGBmatrixPanel::Color444(BLUE));
+RGBmatrixPanel::drawPixel(15,2,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(14,5,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(14,4,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(14,3,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(14,2,RGBmatrixPanel::Color444(BLACK));
+
+//nariz
+
+RGBmatrixPanel::drawPixel(12,9,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(11,9,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(11,8,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(10,9,RGBmatrixPanel::Color444(BLACK));
+
+//boca
+
+RGBmatrixPanel::drawPixel(16,13,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(15,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(14,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(13,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(12,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(11,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(10,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(9,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(8,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(7,14,RGBmatrixPanel::Color444(BLACK));
+RGBmatrixPanel::drawPixel(6,13,RGBmatrixPanel::Color444(BLACK));
+
+} 
+
 void Screen::update_screen(int message[]){
   if ((preamble_check(message) && chksum_check(message)) || TEST_MODE){
     connected_status(message[CONNECTED_POS]);
