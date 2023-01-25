@@ -353,6 +353,19 @@ void Screen::sleepy_face(){
 void Screen::clear_face(){
   RGBmatrixPanel::fillRect(0,2,31,15,RGBmatrixPanel::Color444(BLACK));
 }
+
+void  Screen::jailson_cara (){
+
+  RGBmatrixPanel::drawLine (10,12,20,12, RGBmatrixPanel::Color444 ( 0 , 0 , 255 )); //boca
+  RGBmatrixPanel::drawLine (9,11,21,11, RGBmatrixPanel::Color444 ( 0 , 0 , 255 )); //boca
+  RGBmatrixPanel::drawLine (14,9,16,9 , RGBmatrixPanel::Color444 ( 0 , 0 , 255 )); //nariz
+  RGBmatrixPanel::drawLine (12,7,12,9 , RGBmatrixPanel::Color444 ( 0 , 0 , 255 )); //olho
+  RGBmatrixPanel::drawLine (17,7,17,9 , RGBmatrixPanel::Color444 ( 0 , 0 , 255 )); //olho
+  RGBmatrixPanel::drawLine (5,6,25,6, RGBmatrixPanel::Color444 ( 255 , 0 , 0 ));
+  RGBmatrixPanel::drawLine (6,5,24,5, RGBmatrixPanel::Color444 ( 255 , 255 , 255 ));
+  RGBmatrixPanel::drawLine (7,4,23,4, RGBmatrixPanel::Color444 ( 0 , 255 , 0 ));
+  RGBmatrixPanel::drawLine (6,15,24,15, RGBmatrixPanel::Color444 ( 0 , 0 , 255 ));
+}
     
 void Screen::update_screen(int message[]){
   if ((preamble_check(message) && chksum_check(message)) || TEST_MODE){
